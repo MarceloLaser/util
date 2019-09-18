@@ -10,7 +10,7 @@ import java.util.logging.*;
 public class EasyLogger
 {
   private static Logger LOGGER = null;
-  public static final Level LEVEL = Level.FINEST;
+  public static final Level LEVEL = Level.INFO;
 
   public static boolean initializeLogger(String logFile)
   {
@@ -54,5 +54,10 @@ public class EasyLogger
       return true;
     }
     return false;
+  }
+
+  public static boolean log(String msg)
+  {
+    return log(Level.INFO, msg);
   }
 }
