@@ -3,6 +3,7 @@ package laser.util;
 import java.io.File;
 import java.util.List;
 import java.util.LinkedList;
+import org.apache.commons.io.FilenameUtils;
 
 public class ListFiles
 {
@@ -16,7 +17,7 @@ public class ListFiles
   private static List<String> check(
     String prepend, File currentFile, List<String> result)
   {
-    prepend += "." + currentFile.getName();
+    prepend += "." + FilenameUtils.removeExtension(currentFile.getName());
 
     if(currentFile.isDirectory())
     {
